@@ -19,7 +19,7 @@
 
     <main class="flex gap-4 mb-12">
         <div class="w-3/4 grid grid-cols-3 gap-4">
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/triangle.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -27,33 +27,36 @@
                     <h4 class="text-xl font-bold pt-4">Triangle</h4>
                     <p>Area(A) = 0.5 x b x h</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>b=<span>10</span>cm,</p>
-                        <p class="mr-2">h=<span>12</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>b=<span id="triangle-base">10</span>cm,</p>
+                        <p class="mr-2">h=<span id="triangle-height">12</span>cm</p>
+                        <svg id="btn-edit-triangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
 
                     </div>
                     <div class="pb-4">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="b">
+                        <input id="triangle-base-input" type="number" class="bg-gray-200 rounded px-2 w-20"
+                            placeholder="b">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="h">
+                        <input id="triangle-height-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="h">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-triangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-triangle" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
             </div>
 
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/rectangle.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -61,32 +64,35 @@
                     <h4 class="text-xl font-bold pt-4">Rectangle</h4>
                     <p>Area(A) = w x l</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>w=<span>10</span>cm,</p>
-                        <p class="mr-2">l=<span>12</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>w=<span id="rectangle-width">10</span>cm,</p>
+                        <p class="mr-2">l=<span id="rectangle-length">12</span>cm</p>
+                        <svg id="btn-edit-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
                     <div class="pb-4">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="w">
+                        <input id="rectangle-width-input" type="number" class="bg-gray-200 rounded px-2 w-20"
+                            placeholder="w">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="l">
+                        <input id="rectangle-length-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="l">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-rectangle" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
             </div>
 
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/parallelogram.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -94,32 +100,36 @@
                     <h4 class="text-xl font-bold pt-4">Parallelogram</h4>
                     <p>Area(A) = b x h</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>b=<span>10</span>cm,</p>
-                        <p class="mr-2">h=<span>12</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>b=<span id="parallelogram-base">10</span>cm,</p>
+                        <p class="mr-2">h=<span id="parallelogram-height">12</span>cm</p>
+                        <svg id="btn-edit-parallelogram" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
                     <div class="pb-3">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="b">
+                        <input id="parallelogram-base-input" type="number" class="bg-gray-200 rounded px-2 w-20"
+                            placeholder="b">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="h">
+                        <input id="parallelogram-height-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="h">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-parallelogram" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-parallelogram" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
             </div>
 
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/rhombus.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -127,32 +137,35 @@
                     <h4 class="text-xl font-bold pt-4">Rhombus</h4>
                     <p>Area(A) = 0.5 x d1 x d2</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>d1=<span>16</span>cm,</p>
-                        <p class="mr-2">d2=<span>8</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>d1=<span id="rhombus-d1">16</span>cm,</p>
+                        <p class="mr-2">d2=<span id="rhombus-d2">8</span>cm</p>
+                        <svg id="btn-edit-rhombus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
                     <div class="pb-3">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="d1">
+                        <input id="rhombus-d1-input" type="number" class="bg-gray-200 rounded px-2 w-20"
+                            placeholder="d1">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="d2">
+                        <input id="rhombus-d2-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="d2">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-rhombus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-rhombus" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
             </div>
 
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/pentagon.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -160,32 +173,35 @@
                     <h4 class="text-xl font-bold pt-4">Pentagon</h4>
                     <p>Area(A) = 0.5 x p x b</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>p=<span>6</span>cm,</p>
-                        <p class="mr-2">b=<span>10</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>p=<span id="pentagon-p">6</span>cm,</p>
+                        <p class="mr-2">b=<span id="pentagon-base">10</span>cm</p>
+                        <svg id="btn-edit-pentagon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
                     <div class="pb-3">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="p">
+                        <input id="pentagon-p-input" type="number" class="bg-gray-200 rounded px-2 w-20"
+                            placeholder="p">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="b">
+                        <input id="pentagon-base-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="b">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-pentagon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-pentagon" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
             </div>
 
-            <div class="border rounded py-4">
+            <div class="border rounded py-4 hover-random-bg">
                 <div class="w-3/4 mx-auto h-48">
                     <img src="./images/ellipse.png" alt="" class="mx-auto w-3/4">
                 </div>
@@ -193,26 +209,28 @@
                     <h4 class="text-xl font-bold pt-4">Ellipse</h4>
                     <p>Area(A) = 3.416 x ab</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>a=<span>10</span>cm,</p>
-                        <p class="mr-2">b=<span>4</span>cm</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 text-blue-400">
+                        <p>a=<span id="ellipse-a">10</span>cm,</p>
+                        <p class="mr-2">b=<span id="ellipse-b">4</span>cm</p>
+                        <svg id="btn-edit-ellipse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
                     <div class="pb-3">
-                        <input type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="a">
+                        <input id="ellipse-a-input" type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="a">
                         <span class="ml-1 mr-2">cm</span>
-                        <input type="number" class="bg-gray-200 rounded px-2 mr-1 w-20" placeholder="b">
+                        <input id="ellipse-b-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
+                            placeholder="b">
                         <span class="mr-2">cm</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-6 h-6 inline text-blue-400">
+                        <svg id="btn-check-ellipse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <button type="button" class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
+                    <button id="btn-calculate-ellipse" type="button"
+                        class="text-lg font-bold text-white bg-blue-400 rounded px-6 py-2 w-3/4">
                         Calculate
                     </button>
                 </div>
