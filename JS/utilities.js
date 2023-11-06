@@ -22,3 +22,86 @@ function updateCardsInputValue(isEdit, cardUpdateButtonId, cardInputFieldId, fir
         })
     }
 }
+
+// Calling the functions to calculate area of shapes and display in calculate area section
+
+calculateArea('btn-calculate-triangle', 'shape-triangle', 'triangle-base', 'triangle-height');
+calculateArea('btn-calculate-rectangle', 'shape-rectangle', 'rectangle-width', 'rectangle-length');
+calculateArea('btn-calculate-parallelogram', 'shape-parallelogram', 'parallelogram-base', 'parallelogram-height');
+calculateArea('btn-calculate-rhombus', 'shape-rhombus', 'rhombus-d1', 'rhombus-d2');
+calculateArea('btn-calculate-pentagon', 'shape-pentagon', 'pentagon-p', 'pentagon-base');
+calculateArea('btn-calculate-ellipse', 'shape-ellipse', 'ellipse-a', 'ellipse-b');
+
+// To calculate area of shapes and display in calculate area section
+
+function calculateArea(btnCalculateId, shapeNameId, firstSideValueId, secondSideValueId) {
+    document.getElementById(btnCalculateId).addEventListener('click', function () {
+
+        let { shapeName, firstSideValue, secondSideValue } = getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId);
+
+        if (!firstSideValue || !secondSideValue || firstSideValue <= 0 || secondSideValue <= 0) {
+            alert('Please enter a positive integer or fraction number');
+        } else {
+            let areaString;
+            switch (shapeName) {
+                case 'Triangle':
+                case 'Rhombus':
+                case 'Pentagon':
+                    areaString = (0.5 * firstSideValue * secondSideValue).toFixed(2);
+                    break;
+                case 'Rectangle':
+                case 'Parallelogram':
+                    areaString = (firstSideValue * secondSideValue).toFixed(2);
+                    break;
+                case 'Ellipse':
+                    areaString = (3.1416 * firstSideValue * secondSideValue).toFixed(2);
+                    break;
+                default:
+                    alert('Not a valid geometrical shape');
+                    break;
+            }
+
+            if (areaString) {
+                const area = parseFloat(areaString);
+                addListItem(area, shapeNameId, firstSideValueId, secondSideValueId);
+            }
+        }
+
+    })
+}
+
+// Getting shapes information to calculate area
+
+function getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId) {
+    let shapeName = document.getElementById(shapeNameId).innerText;
+
+    const firstSideString = document.getElementById(firstSideValueId).innerText;
+    const firstSideValue = parseFloat(firstSideString);
+    const secondSideString = document.getElementById(secondSideValueId).innerText;
+    const secondSideValue = parseFloat(secondSideString);
+
+    return { shapeName, firstSideValue, secondSideValue };
+}
+
+// Add list of areas to the 'calculate area'
+
+function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
+
+    const { shapeName, firstSideValue, secondSideValue } = getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId);
+
+    const list = document.getElementById('calculated-area-list');
+    const li = document.createElement('li');
+
+    li.innerHTML = `
+        <p class='font-bold'>
+        Area of ${shapeName} is : <span class='text-green-400 font-bold text-2xl'>${area} </span>cm<sup>2, <br /> <span class='text-sm text-blue-400'>(when b = ${firstSideValue} and h = ${secondSideValue})</span>
+        </p>
+        <button class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
+            Convert to m<sup>2
+        </button>
+        <button class='text-2xl font-bold text-red-500 bg-white rounded px-3 py-1 ml-6'>X</button>
+    `
+    list.appendChild(li);
+
+}
+
