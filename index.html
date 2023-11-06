@@ -27,8 +27,8 @@
                     <h4 class="text-xl font-bold pt-4">Triangle</h4>
                     <p>Area(A) = 0.5 x b x h</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>b=<span id="triangle-base">10</span>cm,</p>
-                        <p class="mr-2">h=<span id="triangle-height">12</span>cm</p>
+                        <p>b=<span id="triangle-base">0</span>cm,</p>
+                        <p class="mr-2">h=<span id="triangle-height">0</span>cm</p>
                         <svg id="btn-edit-triangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -36,7 +36,7 @@
                         </svg>
 
                     </div>
-                    <div class="pb-4">
+                    <div id="triangle-input-field" class="pb-3 hidden">
                         <input id="triangle-base-input" type="number" class="bg-gray-200 rounded px-2 w-20"
                             placeholder="b">
                         <span class="ml-1 mr-2">cm</span>
@@ -64,15 +64,15 @@
                     <h4 class="text-xl font-bold pt-4">Rectangle</h4>
                     <p>Area(A) = w x l</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>w=<span id="rectangle-width">10</span>cm,</p>
-                        <p class="mr-2">l=<span id="rectangle-length">12</span>cm</p>
+                        <p>w=<span id="rectangle-width">0</span>cm,</p>
+                        <p class="mr-2">l=<span id="rectangle-length">0</span>cm</p>
                         <svg id="btn-edit-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
-                    <div class="pb-4">
+                    <div id="rectangle-input-field" class="pb-3 hidden">
                         <input id="rectangle-width-input" type="number" class="bg-gray-200 rounded px-2 w-20"
                             placeholder="w">
                         <span class="ml-1 mr-2">cm</span>
@@ -100,15 +100,15 @@
                     <h4 class="text-xl font-bold pt-4">Parallelogram</h4>
                     <p>Area(A) = b x h</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>b=<span id="parallelogram-base">10</span>cm,</p>
-                        <p class="mr-2">h=<span id="parallelogram-height">12</span>cm</p>
+                        <p>b=<span id="parallelogram-base">0</span>cm,</p>
+                        <p class="mr-2">h=<span id="parallelogram-height">0</span>cm</p>
                         <svg id="btn-edit-parallelogram" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
-                    <div class="pb-3">
+                    <div id="parallelogram-input-field" class="pb-3 hidden">
                         <input id="parallelogram-base-input" type="number" class="bg-gray-200 rounded px-2 w-20"
                             placeholder="b">
                         <span class="ml-1 mr-2">cm</span>
@@ -137,15 +137,15 @@
                     <h4 class="text-xl font-bold pt-4">Rhombus</h4>
                     <p>Area(A) = 0.5 x d1 x d2</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>d1=<span id="rhombus-d1">16</span>cm,</p>
-                        <p class="mr-2">d2=<span id="rhombus-d2">8</span>cm</p>
+                        <p>d1=<span id="rhombus-d1">0</span>cm,</p>
+                        <p class="mr-2">d2=<span id="rhombus-d2">0</span>cm</p>
                         <svg id="btn-edit-rhombus" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
-                    <div class="pb-3">
+                    <div id="rhombus-input-field" class="pb-3 hidden">
                         <input id="rhombus-d1-input" type="number" class="bg-gray-200 rounded px-2 w-20"
                             placeholder="d1">
                         <span class="ml-1 mr-2">cm</span>
@@ -173,15 +173,15 @@
                     <h4 class="text-xl font-bold pt-4">Pentagon</h4>
                     <p>Area(A) = 0.5 x p x b</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>p=<span id="pentagon-p">6</span>cm,</p>
-                        <p class="mr-2">b=<span id="pentagon-base">10</span>cm</p>
+                        <p>p=<span id="pentagon-p">0</span>cm,</p>
+                        <p class="mr-2">b=<span id="pentagon-base">0</span>cm</p>
                         <svg id="btn-edit-pentagon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
-                    <div class="pb-3">
+                    <div id="pentagon-input-field" class="pb-3 hidden">
                         <input id="pentagon-p-input" type="number" class="bg-gray-200 rounded px-2 w-20"
                             placeholder="p">
                         <span class="ml-1 mr-2">cm</span>
@@ -209,15 +209,15 @@
                     <h4 class="text-xl font-bold pt-4">Ellipse</h4>
                     <p>Area(A) = 3.416 x ab</p>
                     <div class="pb-4 flex justify-center gap-1">
-                        <p>a=<span id="ellipse-a">10</span>cm,</p>
-                        <p class="mr-2">b=<span id="ellipse-b">4</span>cm</p>
+                        <p>a=<span id="ellipse-a">0</span>cm,</p>
+                        <p class="mr-2">b=<span id="ellipse-b">0</span>cm</p>
                         <svg id="btn-edit-ellipse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-400">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                         </svg>
                     </div>
-                    <div class="pb-3">
+                    <div id="ellipse-input-field" class="pb-3 hidden">
                         <input id="ellipse-a-input" type="number" class="bg-gray-200 rounded px-2 w-20" placeholder="a">
                         <span class="ml-1 mr-2">cm</span>
                         <input id="ellipse-b-input" type="number" class="bg-gray-200 rounded px-2 mr-1 w-20"
@@ -243,6 +243,7 @@
     </main>
 
     <!-- JS Files -->
+    <script src="JS/utilities.js"></script>
     <script src="JS/app.js"></script>
 </body>
 
