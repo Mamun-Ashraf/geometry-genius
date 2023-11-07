@@ -23,15 +23,6 @@ function updateCardsInputValue(isEdit, cardUpdateButtonId, cardInputFieldId, fir
     }
 }
 
-// Calling the functions to calculate area of shapes and display in calculate area section
-
-calculateArea('btn-calculate-triangle', 'shape-triangle', 'triangle-base', 'triangle-height');
-calculateArea('btn-calculate-rectangle', 'shape-rectangle', 'rectangle-width', 'rectangle-length');
-calculateArea('btn-calculate-parallelogram', 'shape-parallelogram', 'parallelogram-base', 'parallelogram-height');
-calculateArea('btn-calculate-rhombus', 'shape-rhombus', 'rhombus-d1', 'rhombus-d2');
-calculateArea('btn-calculate-pentagon', 'shape-pentagon', 'pentagon-p', 'pentagon-base');
-calculateArea('btn-calculate-ellipse', 'shape-ellipse', 'ellipse-a', 'ellipse-b');
-
 // To calculate area of shapes and display in calculate area section
 
 function calculateArea(btnCalculateId, shapeNameId, firstSideValueId, secondSideValueId) {
@@ -94,14 +85,49 @@ function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
 
     li.innerHTML = `
         <p class='font-bold'>
-        Area of ${shapeName} is : <span class='text-green-400 font-bold text-2xl'>${area} </span>cm<sup>2, <br /> <span class='text-sm text-blue-400'>(when b = ${firstSideValue} and h = ${secondSideValue})</span>
+        Area of ${shapeName} is : <span class='text-green-400 font-bold text-2xl'>${area} </span><span id='meterOrCm'>cm</span><sup>2, <br /> <span class='text-sm text-blue-400'>(when b = ${firstSideValue} cm and h = ${secondSideValue} cm)</span>
         </p>
-        <button class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
+        <button id='btn-m-sq' class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
             Convert to m<sup>2
         </button>
-        <button class='text-2xl font-bold text-red-500 bg-white rounded px-3 py-1 ml-6'>X</button>
+        <button id='btn-cm-sq' class='hidden bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
+            Convert to cm<sup>2
+        </button>
+        <button id='btn-delete-area' class='text-2xl font-bold text-red-500 bg-white rounded px-3 py-1 ml-6'>X</button>
     `
     list.appendChild(li);
+    li.querySelector('#btn-delete-area').addEventListener('click', function () {
+        li.remove();
+    })
+
+    const areaInSquareMetersString = (area / 10000).toFixed(3);
+    const areaInSquareMeters = parseFloat(areaInSquareMetersString);
+    const btnSqM = li.querySelector('#btn-m-sq');
+    btnSqM.addEventListener('click', function () {
+        btnSqM.classList.add('hidden');
+        const btnSqCm = li.querySelector('#btn-cm-sq');
+        btnSqCm.classList.remove('hidden');
+        li.querySelector('.text-green-400').textContent = areaInSquareMeters;
+        li.querySelector('#meterOrCm').textContent = 'm';
+    })
+
+    const areaInSquareCentimetersString = ((area / 10000) * 10000).toFixed(3);
+    const areaInSquareCentimeters = parseFloat(areaInSquareCentimetersString);
+    const btnSqCm = li.querySelector('#btn-cm-sq');
+    btnSqCm.addEventListener('click', function () {
+        const btnSqM = li.querySelector('#btn-m-sq');
+        btnSqM.classList.remove('hidden');
+        btnSqCm.classList.add('hidden');
+        li.querySelector('.text-green-400').textContent = areaInSquareCentimeters;
+        li.querySelector('#meterOrCm').textContent = 'cm';
+    })
 
 }
 
+
+function convertArea(btnConvertId) {
+
+    const convertSqM = document.getElementById('btn-m-sq').textContent;
+    const convertSqCm = document.getElementById('btn-sq-cm').textContent;
+    const deleteArea = document.getElementById('btn-delete-area').textContent;
+}
