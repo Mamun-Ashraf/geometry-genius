@@ -17,8 +17,8 @@ function updateCardsInputValue(isEdit, cardUpdateButtonId, cardInputFieldId, fir
             const firstSideValueInput = document.getElementById(firstSideValueInputId).value;
             const secondSideValueInput = document.getElementById(secondSideValueInputId).value;
 
-            firstSideValue.innerText = firstSideValueInput;
-            secondSideValue.innerText = secondSideValueInput;
+            firstSideValue.innerText = firstSideValueInput + ' ';
+            secondSideValue.innerText = secondSideValueInput + ' ';
         })
     }
 }
@@ -38,14 +38,14 @@ function calculateArea(btnCalculateId, shapeNameId, firstSideValueId, secondSide
                 case 'Triangle':
                 case 'Rhombus':
                 case 'Pentagon':
-                    areaString = (0.5 * firstSideValue * secondSideValue).toFixed(2);
+                    areaString = (0.5 * firstSideValue * secondSideValue).toFixed(3);
                     break;
                 case 'Rectangle':
                 case 'Parallelogram':
-                    areaString = (firstSideValue * secondSideValue).toFixed(2);
+                    areaString = (firstSideValue * secondSideValue).toFixed(3);
                     break;
                 case 'Ellipse':
-                    areaString = (3.1416 * firstSideValue * secondSideValue).toFixed(2);
+                    areaString = (3.1416 * firstSideValue * secondSideValue).toFixed(3);
                     break;
                 default:
                     alert('Not a valid geometrical shape');
@@ -78,14 +78,14 @@ function getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId) {
 
 function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
 
-    const { shapeName, firstSideValue, secondSideValue } = getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId);
+    let { shapeName, firstSideValue, secondSideValue } = getShapeInfo(shapeNameId, firstSideValueId, secondSideValueId);
 
     const list = document.getElementById('calculated-area-list');
     const li = document.createElement('li');
 
     li.innerHTML = `
         <p class='font-bold'>
-        Area of ${shapeName} is : <span class='text-green-400 font-bold text-2xl'>${area} </span><span id='meterOrCm'>cm</span><sup>2, <br /> <span class='text-sm text-blue-400'>(when b = ${firstSideValue} cm and h = ${secondSideValue} cm)</span>
+        Area of ${shapeName} is : <span class='text-green-400 font-bold text-2xl'>${area} </span><span id='meterOrCm'>cm</span><sup>2, <br /> <span class='text-sm text-blue-400'>(when First value = ${firstSideValue} cm and Second value = ${secondSideValue} cm)</span>
         </p>
         <button id='btn-m-sq' class='bg-blue-400 text-white font-bold rounded px-2 py-1 my-2'>
             Convert to m<sup>2
@@ -96,9 +96,14 @@ function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
         <button id='btn-delete-area' class='text-2xl font-bold text-red-500 bg-white rounded px-3 py-1 ml-6'>X</button>
     `
     list.appendChild(li);
+
+    // Implementing delete button to remove a specific area
+
     li.querySelector('#btn-delete-area').addEventListener('click', function () {
         li.remove();
     })
+
+    // Implementing convert-button from squareCentimeter to squareMeter
 
     const areaInSquareMetersString = (area / 10000).toFixed(3);
     const areaInSquareMeters = parseFloat(areaInSquareMetersString);
@@ -108,8 +113,10 @@ function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
         const btnSqCm = li.querySelector('#btn-cm-sq');
         btnSqCm.classList.remove('hidden');
         li.querySelector('.text-green-400').textContent = areaInSquareMeters;
-        li.querySelector('#meterOrCm').textContent = 'm';
+        li.querySelector('#meterOrCm').textContent = ' m';
     })
+
+    // Implementing convert-button from squareMeter to squareCentimeter
 
     const areaInSquareCentimetersString = ((area / 10000) * 10000).toFixed(3);
     const areaInSquareCentimeters = parseFloat(areaInSquareCentimetersString);
@@ -119,15 +126,6 @@ function addListItem(area, shapeNameId, firstSideValueId, secondSideValueId) {
         btnSqM.classList.remove('hidden');
         btnSqCm.classList.add('hidden');
         li.querySelector('.text-green-400').textContent = areaInSquareCentimeters;
-        li.querySelector('#meterOrCm').textContent = 'cm';
+        li.querySelector('#meterOrCm').textContent = ' cm';
     })
-
-}
-
-
-function convertArea(btnConvertId) {
-
-    const convertSqM = document.getElementById('btn-m-sq').textContent;
-    const convertSqCm = document.getElementById('btn-sq-cm').textContent;
-    const deleteArea = document.getElementById('btn-delete-area').textContent;
 }
